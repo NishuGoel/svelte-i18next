@@ -9,11 +9,11 @@ export interface TranslationService {
 export class I18NextTranslationStore implements TranslationService {
     public i18n: Writable<i18n>;
 
-    constructor(i18n: i18n, ns: string | string[]) {
+    constructor(i18n: i18n, ns?: string | string[]) {
         this.i18n = this.createInstance(i18n, ns);
     }
 
-    private createInstance(i18n: i18n, ns: string | string[]): Writable<i18n> {
+    private createInstance(i18n: i18n, ns?: string | string[]): Writable<i18n> {
         const i18n_writable = writable(i18n)
 
         i18n.on('initialized', () => {
