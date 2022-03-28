@@ -1,0 +1,1 @@
+# svelte-i18next
