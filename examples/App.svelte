@@ -2,7 +2,7 @@
     import i18next from "i18next";
     import Backend from "i18next-browser-languagedetector";
     import LanguageDetector from "i18next-http-backend";
-    import { createI18nStore } from "./index";
+    import { createI18nStore } from "../src/index";
 
     i18next
         .use(Backend)
@@ -24,10 +24,10 @@
                 addPath: "/locales/add/{{lng}}/{{ns}}",
             },
         });
-    const i18n = createI18nStore(i18next, "navigation");
+    const i18n = createI18nStore(i18next, "example");
 </script>
 
 <section on:click={() => $i18n.changeLanguage("de")}>
-    {$i18n.getFixedT(null, "navigation")("Hello")}
-    {$i18n.getFixedT(null, "navigation")("World")}
+    {$i18n.getFixedT(null, "example")("Hello")}
+    {$i18n.getFixedT(null, "example")("World")}
 </section>
