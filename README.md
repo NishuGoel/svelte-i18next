@@ -28,7 +28,7 @@ const i18n = createI18nStore(i18n_instance, namespace) // where namespace can be
 
 // Usage
 <div>
-    {$i18n.getFixedT(lng, ns)(key)}
+    {$i18n.t(key)}
 </div>
 ```
 
@@ -77,10 +77,6 @@ App.svelte
     import i18n from './i18n.ts';
 
     <div>
-        {$i18n.t(key)} // standard i18next t function to get the transaltion of a key.
-    </div>
-
-    <div>
-        {$i18n.getFixedT(lng, 'example')(key)} //getFixedT being the native i18next method to get translations for a defined language or namespace.
+        {$i18n.t(key)} // standard i18next t function to get the translation of a key from the namespace "example" defined at the store init `createI18nStore` step.
     </div>
 ```
