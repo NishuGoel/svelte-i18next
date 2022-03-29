@@ -74,9 +74,9 @@ export const i18n = createI18nStore(i18next, "example"); // "example" being the 
 App.svelte
 
 ```jsx
-    import i18n from './i18n.ts';
+import i18n from './i18n.ts';
 
-    <div>
-        {$i18n.t(key)} // standard i18next t function to get the translation of a key from the namespace "example" defined at the store init `createI18nStore` step.
-    </div>
+<div>
+    {$i18n.t(key)} // standard i18next t function to get the translation of a key from the namespace "example" defined at the store init `createI18nStore` step.
+</div>
 ```
