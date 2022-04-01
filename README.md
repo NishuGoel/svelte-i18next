@@ -19,18 +19,6 @@ const i18n = createI18nStore(i18n_instance) // where i18n_instance can be your i
 </div>
 ```
 
-Alternatively, if translations are structured into multiple files, one could pass the namespace to the `createI18nStore` as:
-
-```jsx
-import { createI18nStore } from 'svelte-i18next';
-
-const i18n = createI18nStore(i18n_instance, namespace) // where namespace can be a string OR a list of strings of namespaces
-
-// Usage
-<div>
-    {$i18n.t(key)}
-</div>
-```
 
 ### Installation
 Source can be loaded via npm or downloaded from this repo.
@@ -68,7 +56,7 @@ i18next
         }
     });
 
-export const i18n = createI18nStore(i18next, "example"); // "example" being the namesapce to load translation files from.
+export const i18n = createI18nStore(i18next);
 ```
 
 App.svelte
@@ -77,6 +65,24 @@ App.svelte
 import i18n from './i18n.ts';
 
 <div>
-    {$i18n.t(key)} // standard i18next t function to get the translation of a key from the namespace "example" defined at the store init `createI18nStore` step.
+    {$i18n.t(key)} // standard i18next t function to get the translation of a key after the store init `createI18nStore` step.
+</div>
+```
+
+Alternatively, if translations are structured into multiple files, one could load the namespaces in the consuming application using:
+
+```jsx
+import { createI18nStore } from 'svelte-i18next';
+
+const i18n = createI18nStore(i18n_instance) 
+
+onMount(()=>{
+    i18n.setDefaultNamespace('example');
+    i18n.loadNamespaces(['example']);
+})
+
+// Usage
+<div>
+    {$i18n.t(key)}
 </div>
 ```

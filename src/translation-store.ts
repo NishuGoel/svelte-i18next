@@ -9,15 +9,12 @@ export interface TranslationService {
 export class I18NextTranslationStore implements TranslationService {
     public i18n: Writable<i18n>;
 
-    constructor(i18n: i18n, ns?: string | string[]) {
-        this.i18n = this.createInstance(i18n, ns);
+    constructor(i18n: i18n) {
+        this.i18n = this.createInstance(i18n);
     }
 
-    private createInstance(i18n: i18n, ns?: string | string[]): Writable<i18n> {
+    private createInstance(i18n: i18n): Writable<i18n> {
         const i18n_writable = writable(i18n)
-
-        i18n.setDefaultNamespace(typeof ns === 'string' ? ns : ns[0]);
-        i18n.loadNamespaces(ns, function() {  });
 
         i18n.on('initialized', () => {
             i18n_writable.set(i18n)
