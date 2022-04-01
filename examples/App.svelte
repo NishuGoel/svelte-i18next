@@ -24,10 +24,11 @@
                 addPath: "/locales/add/{{lng}}/{{ns}}",
             },
         });
-    const i18n = createI18nStore(i18next, "example");
+    const i18n = createI18nStore(i18next);
+
 </script>
 
 <section on:click={() => $i18n.changeLanguage("de")}>
-    {$i18n.getFixedT(null, "example")("Hello")}
-    {$i18n.getFixedT(null, "example")("World")}
+    {$i18n.t("Hello")}
+    {$i18n.t("World")}
 </section>
