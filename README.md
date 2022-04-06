@@ -2,6 +2,9 @@
 
 svelte-i18next for svelte framework based on [i18next](https://i18next.com/) internationalization ecosystem 
 
+[npm-icon]: https://nodei.co/npm/svelte-i18next.png?downloads=true
+[npm-url]: https://npmjs.org/package/svelte-i18next
+
 
 ###  Configure
 
