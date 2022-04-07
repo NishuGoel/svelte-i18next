@@ -18,7 +18,7 @@ so your Svelte components re-render e.g. when lanuguage is changed or new resour
 
 ## Quick Start
 
-i18n.js
+`i18n.js`:
 ```ts
 import i18next from "i18next";
 import { createI18nStore } from "svelte-i18next";
@@ -47,7 +47,7 @@ export const i18n = createI18nStore(i18next);
 </script>
 
 <div>
-    {$i18n.t('key') // translates to hello world}
+    {$i18n.t('key')}}
 </div>
 ```
 
