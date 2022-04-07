@@ -7,6 +7,14 @@
     "i18n",
     "i18next"
   ],
+  "homepage": "https://github.com/NishuGoel/svelte-i18next",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NishuGoel/svelte-i18next.git"
+  },
+  "bugs": {
+    "url": "https://github.com/NishuGoel/svelte-i18next/issues"
+  },
   "main": "index.js",
   "types": "index.d.ts",
   "license": "MIT",
