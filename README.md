@@ -14,7 +14,7 @@ npm i svelte-i18next i18next
 ## Implementation
 
 This library wraps an i18next instance in a Svelte Store to observe [i18next events](https://github.com/NishuGoel/svelte-i18next/blob/main/src/translation-store.ts#L23)
-so your Svelte components re-render e.g. when lanuguage is changed or new resource is loaded by i18next.
+so your Svelte components re-render e.g. when language is changed or new resource is loaded by i18next.
 
 ## Quick Start
 
