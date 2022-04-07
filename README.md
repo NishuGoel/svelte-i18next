@@ -1,4 +1,4 @@
-# svelte-i18next [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=svelte-i18next%20for%20svelte%20framework%20based%20on%20i18next%20internationalization%20ecosystem%0Ahttps%3A%2F%2Fgithub.com%2FNishuGoel%2Fsvelte-i18next%0A%23i18n%20%23svelte%20%23sveltejs%20%23javascript%20%23dev%20via%20%40TheNishuGoel%20&hashtags=i18n,sveltejs,svelte,javascript,dev)
+# svelte-i18next [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=%40sveltejs%20wrapper%20for%20i18next%20%0Ahttps%3A%2F%2Fgithub.com%2FNishuGoel%2Fsvelte-i18next%0Avia%20%40TheNishuGoel%20%20&hashtags=i18next,sveltejs,svelte,javascript,webdev)
 
 [![CI](https://github.com/NishuGoel/svelte-i18next/workflows/CI/badge.svg)](https://github.com/NishuGoel/svelte-i18next/actions?query=workflow%3ACI)
 [![npm version](https://img.shields.io/npm/v/svelte-i18next.svg)](https://www.npmjs.com/package/svelte-i18next)
