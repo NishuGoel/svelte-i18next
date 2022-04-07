@@ -31,7 +31,7 @@ i18next.init({
         "key": "hello world"
       }
     }
-  }
+  },
   interpolation: {
     escapeValue: false, // not needed for svelte as it escapes by default
   }
