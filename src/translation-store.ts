@@ -6,7 +6,7 @@ export interface TranslationService {
     i18n: Readable<i18n>;
 }
 
-export const isLoading = writable(false);
+export const isLoading = writable(true);
 
 export class I18NextTranslationStore implements TranslationService {
     public i18n: Writable<i18n>;
@@ -36,7 +36,7 @@ export class I18NextTranslationStore implements TranslationService {
     private createLoadingInstance(i18n: i18n): Writable<boolean> {
         // if loaded resources are empty || {}, set loading to true
         i18n.on('loaded', (resources) => {
-            isLoading.set(Object.keys(resources).length === 0)
+            Object.keys(resources).length !== 0 && isLoading.set(false)
         })
 
         // if resources failed loading, set loading to true
