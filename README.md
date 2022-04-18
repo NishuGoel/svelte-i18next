@@ -47,7 +47,7 @@ export const i18n = createI18nStore(i18next);
 </script>
 
 <div>
-    {$i18n.t('key')}}
+    {$i18n.t('key')}
 </div>
 ```
 
