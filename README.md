@@ -37,7 +37,8 @@ i18next.init({
   }
 });
 
-export const i18n = createI18nStore(i18next);
+const i18n = createI18nStore(i18next);
+export default i18n;
 ```
 
 `App.svelte`:
