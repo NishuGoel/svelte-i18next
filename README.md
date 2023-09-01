@@ -51,5 +51,54 @@ export const i18n = createI18nStore(i18next);
 </div>
 ```
 
+## Usage with Sveltekit
+
+Sveltekit shares stores across requests on server-side. This means that one users request could change the language setting of another users rendering if that is still ongoing. To avoid this issue, use `setContext` to create request-scoped store instances:
+
+`i18n.js`:
+```ts
+import i18next from "i18next";
+import { createI18nStore } from "svelte-i18next";
+
+i18next.init({
+ lng: 'en',
+ resources: {
+    en: {
+      translation: {
+        "key": "hello world"
+      }
+    }
+  },
+  interpolation: {
+    escapeValue: false, // not needed for svelte as it escapes by default
+  }
+});
+
+export default () => createI18nStore(i18next);
+```
+
+`routes/+layout.svelte`:
+```sveltehtml
+<script>
+  import getI18nStore from "i18n.js";
+  import { setContext } from "svelte";
+  
+  setContext('i18n', getI18nStore());
+</script>
+```
+
+`routes/+page.svelte`:
+```sveltehtml
+<script>
+  import { getContext } from "svelte";
+  
+  const i18n = getContext("i18n");
+</script>
+
+<div>
+  <h1>{ $i18n.t("key") }</h1>
+</div>
+```
+
 See full example project: [Svelte example](https://github.com/NishuGoel/svelte-i18next/blob/main/example)
 
