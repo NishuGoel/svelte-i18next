@@ -22,9 +22,10 @@
   "license": "MIT",
   "files": [
     "package.json",
-    "*.js",
-    "*.js.map",
-    "*.d.ts"
+    "**/*.js",
+    "**/*.js.map",
+    "**/*.d.ts",
+    "**/*.ts"
   ],
   "devDependencies": {
     "@jest/types": "^29.5.0",
