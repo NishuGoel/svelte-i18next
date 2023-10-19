@@ -1,6 +1,6 @@
 {
   "name": "svelte-i18next",
-  "version": "2.2.0",
+  "version": "2.2.2",
   "type": "module",
   "author": "Nishu Goel <nishu0505@gmail.com>",
   "description": "Svelte wrapper for i18next",
