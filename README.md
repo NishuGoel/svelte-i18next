@@ -37,18 +37,21 @@ i18next.init({
   }
 });
 
-const i18n = createI18nStore(i18next);
-export default i18n;
+export const { i18n, t, isError, isLoading } = createI18nStore(i18next);
 ```
 
 `App.svelte`:
 ```svelte
 <script>
-  import i18n from './i18n.js';
+  import { i18n, t } from './i18n.js';
+
+  $: tKey = $t('key');
 </script>
 
 <div>
-    {$i18n.t('key')}
+  {$i18n.t('key')}
+  {$t('key')}
+  {tKey}
 </div>
 ```
 
@@ -93,11 +96,12 @@ export default () => createI18nStore(i18next);
 <script>
   import { getContext } from "svelte";
   
-  const i18n = getContext("i18n");
+  const { i18n, t, isError, isLoading } = getContext("i18n");
 </script>
 
 <div>
   <h1>{ $i18n.t("key") }</h1>
+  <h1>{ $t("key") }</h1>
 </div>
 ```
 

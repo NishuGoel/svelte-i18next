@@ -1,4 +1,9 @@
-const storeMock = jest.fn(() => ({ i18n: "i18nWritableInstance" }));
+const storeMock = jest.fn(() => ({
+  i18n: "i18nWritableInstance",
+  t: "TFunctionWritableInstance",
+  isLoading: "BooleanWritableInstance",
+  isError: "BooleanWritableInstance",
+}));
 jest.mock("./translation-store", () => {
   return { I18NextTranslationStore: storeMock };
 });
@@ -13,9 +18,12 @@ describe("i18n module", () => {
       expect(storeMock).toBeCalled();
     });
 
-    it("should return Writable i18n instance", () => {
-      const store = createI18nStore(i18next);
-      expect(store).toEqual("i18nWritableInstance");
+    it("should return Writable i18n/t/isLoading/isError instance", () => {
+      const { i18n, t, isLoading, isError } = createI18nStore(i18next);
+      expect(i18n).toEqual("i18nWritableInstance");
+      expect(t).toEqual("TFunctionWritableInstance");
+      expect(isLoading).toEqual("BooleanWritableInstance");
+      expect(isError).toEqual("BooleanWritableInstance");
     });
   });
 });
