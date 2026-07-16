@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import { company, productCategories } from '$lib/data/company';
 </script>
 
@@ -30,7 +31,7 @@
 					{#each productCategories as category}
 						<li>
 							<a
-								href="/products/{category.slug}"
+								href="{base}/products/{category.slug}"
 								class="text-sm text-gray-400 transition-colors hover:text-amber-500"
 							>
 								{category.title}
@@ -45,22 +46,22 @@
 				<h3 class="mb-4 text-sm font-semibold tracking-wider text-white uppercase">Company</h3>
 				<ul class="space-y-3">
 					<li>
-						<a href="/about" class="text-sm text-gray-400 transition-colors hover:text-amber-500">
+						<a href="{base}/about" class="text-sm text-gray-400 transition-colors hover:text-amber-500">
 							About Us
 						</a>
 					</li>
 					<li>
-						<a href="/services" class="text-sm text-gray-400 transition-colors hover:text-amber-500">
+						<a href="{base}/services" class="text-sm text-gray-400 transition-colors hover:text-amber-500">
 							Installation Services
 						</a>
 					</li>
 					<li>
-						<a href="/products" class="text-sm text-gray-400 transition-colors hover:text-amber-500">
+						<a href="{base}/products" class="text-sm text-gray-400 transition-colors hover:text-amber-500">
 							All Products
 						</a>
 					</li>
 					<li>
-						<a href="/contact" class="text-sm text-gray-400 transition-colors hover:text-amber-500">
+						<a href="{base}/contact" class="text-sm text-gray-400 transition-colors hover:text-amber-500">
 							Contact Us
 						</a>
 					</li>

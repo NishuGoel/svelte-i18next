@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import { productCategories } from '$lib/data/company';
 	import PageHero from '$lib/components/PageHero.svelte';
 	import ProductCard from '$lib/components/ProductCard.svelte';
@@ -26,7 +27,7 @@
 				</h2>
 				<p class="text-lg leading-relaxed text-gray-600">{category.description}</p>
 				<a
-					href="/contact"
+					href="{base}/contact"
 					class="mt-8 inline-flex rounded-lg bg-amber-700 px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-amber-700/25 transition-all hover:bg-amber-800"
 				>
 					Request Samples & Pricing
@@ -78,7 +79,7 @@
 		<div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
 			{#each otherCategories as other}
 				<a
-					href="/products/{other.slug}"
+					href="{base}/products/{other.slug}"
 					class="group flex items-center gap-3 rounded-xl border border-gray-100 bg-white p-4 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
 				>
 					<span class="text-2xl">{other.icon}</span>

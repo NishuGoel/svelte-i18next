@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import { company, installationServices } from '$lib/data/company';
 	import PageHero from '$lib/components/PageHero.svelte';
 
@@ -103,7 +104,7 @@
 				{/each}
 			</div>
 			<a
-				href="/contact"
+				href="{base}/contact"
 				class="mt-10 inline-flex rounded-lg bg-white px-8 py-3.5 text-sm font-semibold text-amber-700 transition-all hover:bg-amber-50"
 			>
 				Book a Free Visit

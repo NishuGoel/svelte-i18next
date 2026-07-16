@@ -8,6 +8,11 @@ const config = {
 		adapter: adapter({
 			fallback: undefined
 		}),
+		paths: {
+			// Set by CI for GitHub Pages project sites (e.g. /the-interior-aura);
+			// empty locally and on hosts that serve from the domain root.
+			base: process.env.BASE_PATH || ''
+		},
 		prerender: {
 			handleHttpError: ({ path, message }) => {
 				// Product photos are added to static/images/ separately; cards show a

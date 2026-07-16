@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import type { Product } from '$lib/data/company';
 
 	let { product }: { product: Product } = $props();
@@ -40,7 +41,7 @@
 			<span class="text-xs text-gray-500">{product.unit}</span>
 		</div>
 		<a
-			href="/contact"
+			href="{base}/contact"
 			class="mt-3 inline-flex items-center text-sm font-semibold text-amber-700 transition-transform group-hover:translate-x-1"
 		>
 			Enquire Now

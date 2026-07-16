@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import { company, productCategories } from '$lib/data/company';
 </script>
 
@@ -26,13 +27,13 @@
 				</p>
 				<div class="flex flex-wrap gap-4">
 					<a
-						href="/products"
+						href="{base}/products"
 						class="rounded-lg bg-amber-700 px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-amber-700/25 transition-all hover:bg-amber-800 hover:shadow-xl"
 					>
 						Explore Products
 					</a>
 					<a
-						href="/contact"
+						href="{base}/contact"
 						class="rounded-lg border-2 border-gray-300 px-8 py-3.5 text-sm font-semibold text-gray-700 transition-all hover:border-amber-700 hover:text-amber-700"
 					>
 						Get Free Quote
@@ -97,7 +98,7 @@
 		<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
 			{#each productCategories as category}
 				<a
-					href="/products/{category.slug}"
+					href="{base}/products/{category.slug}"
 					class="group relative overflow-hidden rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl"
 				>
 					<div class="mb-4 text-4xl">{category.icon}</div>
@@ -173,13 +174,13 @@
 		</p>
 		<div class="flex flex-wrap justify-center gap-4">
 			<a
-				href="/services"
+				href="{base}/services"
 				class="rounded-lg bg-white px-8 py-3.5 text-sm font-semibold text-amber-700 transition-all hover:bg-amber-50"
 			>
 				Our Services
 			</a>
 			<a
-				href="/contact"
+				href="{base}/contact"
 				class="rounded-lg border-2 border-white/50 px-8 py-3.5 text-sm font-semibold text-white transition-all hover:border-white hover:bg-white/10"
 			>
 				Request a Callback
@@ -262,7 +263,7 @@
 			physical samples across {company.serviceAreas.join(', ')}.
 		</p>
 		<a
-			href="/contact"
+			href="{base}/contact"
 			class="inline-flex rounded-lg bg-amber-700 px-8 py-3.5 text-sm font-semibold text-white shadow-lg transition-all hover:bg-amber-600"
 		>
 			Contact Us Today

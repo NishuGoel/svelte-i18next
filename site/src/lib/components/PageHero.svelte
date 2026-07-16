@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	let {
 		title,
 		subtitle = '',
@@ -10,7 +11,7 @@
 	<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 		{#if breadcrumb}
 			<nav class="mb-4 text-sm text-gray-500">
-				<a href="/" class="hover:text-amber-700">Home</a>
+				<a href="{base}/" class="hover:text-amber-700">Home</a>
 				<span class="mx-2">/</span>
 				<span class="text-amber-700">{breadcrumb}</span>
 			</nav>

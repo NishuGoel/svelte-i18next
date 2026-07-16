@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import { company, productCategories } from '$lib/data/company';
 	import PageHero from '$lib/components/PageHero.svelte';
 </script>
@@ -148,7 +149,7 @@
 			Whether it's a single room or a full commercial project, we'd love to help.
 		</p>
 		<a
-			href="/contact"
+			href="{base}/contact"
 			class="inline-flex rounded-lg bg-white px-8 py-3.5 text-sm font-semibold text-amber-700 transition-all hover:bg-amber-50"
 		>
 			Get In Touch

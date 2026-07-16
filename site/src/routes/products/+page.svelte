@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import { productCategories } from '$lib/data/company';
 	import PageHero from '$lib/components/PageHero.svelte';
 	import ProductCard from '$lib/components/ProductCard.svelte';
@@ -30,7 +31,7 @@
 					<p class="mt-2 max-w-2xl text-gray-600">{category.subtitle}</p>
 				</div>
 				<a
-					href="/products/{category.slug}"
+					href="{base}/products/{category.slug}"
 					class="inline-flex items-center rounded-lg border-2 border-amber-700 px-5 py-2.5 text-sm font-semibold text-amber-700 transition-colors hover:bg-amber-700 hover:text-white"
 				>
 					View All {category.title}
@@ -59,7 +60,7 @@
 			control films, glass films and soffit panels. Reach out and we'll help you find it.
 		</p>
 		<a
-			href="/contact"
+			href="{base}/contact"
 			class="inline-flex rounded-lg bg-white px-8 py-3.5 text-sm font-semibold text-amber-700 transition-all hover:bg-amber-50"
 		>
 			Ask Us Anything
