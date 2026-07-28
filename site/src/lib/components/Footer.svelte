@@ -1,145 +1,49 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import { company, productCategories } from '$lib/data/company';
+	import { company, collections } from '$lib/data/company';
+	import { t } from '$lib/i18n';
 </script>
 
-<footer class="bg-gray-900 text-gray-300">
-	<!-- Main Footer -->
-	<div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-		<div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
-			<!-- Company Info -->
-			<div class="lg:col-span-1">
-				<div class="mb-4 flex items-center gap-3">
-					<div
-						class="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-700 text-lg font-bold text-white"
-					>
-						IA
-					</div>
-					<div class="font-[Playfair_Display] text-xl font-bold text-white">
-						The Interior Aura
-					</div>
-				</div>
-				<p class="mb-6 text-sm leading-relaxed text-gray-400">
-					{company.description}
+<footer class="site-footer">
+	<div class="wrap">
+		<div class="foot-top">
+			<div class="foot-brand">
+				<div class="mark">The Interior <b>Aura</b></div>
+				<p>
+					{$t(
+						'foot.brandp',
+						'Interior surfaces, considered — sourced and crafted by hand in India.'
+					)}
 				</p>
 			</div>
-
-			<!-- Products -->
-			<div>
-				<h3 class="mb-4 text-sm font-semibold tracking-wider text-white uppercase">Products</h3>
-				<ul class="space-y-3">
-					{#each productCategories as category}
-						<li>
-							<a
-								href="{base}/products/{category.slug}"
-								class="text-sm text-gray-400 transition-colors hover:text-amber-500"
-							>
-								{category.title}
-							</a>
-						</li>
+			<div class="foot-cols">
+				<div class="foot-col">
+					<h4>{$t('foot.col1h', 'Collections')}</h4>
+					{#each collections as c}
+						<a href="{base}/collections/{c.slug}">{$t(`col.${c.slug}.title`, c.shortTitle)}</a>
 					{/each}
-				</ul>
-			</div>
-
-			<!-- Company -->
-			<div>
-				<h3 class="mb-4 text-sm font-semibold tracking-wider text-white uppercase">Company</h3>
-				<ul class="space-y-3">
-					<li>
-						<a href="{base}/about" class="text-sm text-gray-400 transition-colors hover:text-amber-500">
-							About Us
-						</a>
-					</li>
-					<li>
-						<a href="{base}/services" class="text-sm text-gray-400 transition-colors hover:text-amber-500">
-							Installation Services
-						</a>
-					</li>
-					<li>
-						<a href="{base}/products" class="text-sm text-gray-400 transition-colors hover:text-amber-500">
-							All Products
-						</a>
-					</li>
-					<li>
-						<a href="{base}/contact" class="text-sm text-gray-400 transition-colors hover:text-amber-500">
-							Contact Us
-						</a>
-					</li>
-				</ul>
-			</div>
-
-			<!-- Contact Info -->
-			<div>
-				<h3 class="mb-4 text-sm font-semibold tracking-wider text-white uppercase">Contact</h3>
-				<ul class="space-y-4">
-					<li class="flex items-start gap-3">
-						<svg
-							class="mt-0.5 h-5 w-5 shrink-0 text-amber-500"
-							fill="none"
-							viewBox="0 0 24 24"
-							stroke="currentColor"
-						>
-							<path
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								stroke-width="2"
-								d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-							/>
-							<path
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								stroke-width="2"
-								d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-							/>
-						</svg>
-						<span class="text-sm text-gray-400">{company.address.full}</span>
-					</li>
-					<li class="flex items-start gap-3">
-						<svg
-							class="mt-0.5 h-5 w-5 shrink-0 text-amber-500"
-							fill="none"
-							viewBox="0 0 24 24"
-							stroke="currentColor"
-						>
-							<path
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								stroke-width="2"
-								d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-							/>
-						</svg>
-						<span class="text-sm text-gray-400">{company.hours}</span>
-					</li>
-					<li class="flex items-start gap-3">
-						<svg
-							class="mt-0.5 h-5 w-5 shrink-0 text-amber-500"
-							fill="none"
-							viewBox="0 0 24 24"
-							stroke="currentColor"
-						>
-							<path
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								stroke-width="2"
-								d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-							/>
-						</svg>
-						<span class="text-sm text-gray-400">{company.email}</span>
-					</li>
-				</ul>
+				</div>
+				<div class="foot-col">
+					<h4>{$t('foot.col2h', 'House')}</h4>
+					<a href="{base}/atelier">{$t('nav.atelier', 'The Atelier')}</a>
+					<a href="{base}/#heritage">{$t('ft.eyebrow', 'The Heritage Edit')}</a>
+					<a href="{base}/enquire">{$t('nav.enquire', 'Enquire')}</a>
+					<a href="{base}/enquire">{$t('foot.trade', 'Trade & projects')}</a>
+				</div>
+				<div class="foot-col">
+					<h4>{$t('foot.col3h', 'Reach us')}</h4>
+					<span>{$t('foot.city', 'Gurugram, India')}</span>
+					<a href={company.phoneHref}>{company.phone}</a>
+					<a href="mailto:{company.email}">{company.email}</a>
+				</div>
 			</div>
 		</div>
-	</div>
-
-	<!-- Bottom Bar -->
-	<div class="border-t border-gray-800">
-		<div
-			class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-6 sm:flex-row sm:px-6 lg:px-8"
-		>
-			<p class="text-sm text-gray-500">
-				&copy; {new Date().getFullYear()} The Interior Aura. All rights reserved.
-			</p>
-			<p class="text-sm text-gray-500">GST: {company.gst}</p>
+		<div class="foot-bottom">
+			<span
+				>© {new Date().getFullYear()} The Interior Aura.
+				{$t('foot.rights', 'All rights reserved.')}</span
+			>
+			<span>GST {company.gst}</span>
 		</div>
 	</div>
 </footer>

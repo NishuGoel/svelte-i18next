@@ -1,33 +1,27 @@
-// Pricing note: the ₹40/sq ft carpet rate is confirmed from the company's public
-// IndiaMART listing. All other prices are indicative Gurgaon-market starting rates
-// ("Starting ₹X") — adjust them here as the business confirms its actual price list.
+// Pricing note: the ₹40/sq ft nylon carpet rate is confirmed from the company's
+// public IndiaMART listing. All other prices are indicative Gurgaon-market
+// starting rates ("from ₹X") — adjust here as the business confirms its list.
 
 export const company = {
 	name: 'The Interior Aura',
-	tagline: 'Transforming Spaces, Elevating Living',
+	tagline: 'Surfaces, considered',
 	description:
-		'Established in 2022, The Interior Aura is a premier Wholesale Trader and Retailer of Wooden Flooring, Flooring Carpet, Wall Panels, Wallpapers, Blinds and more. We bring quality interior solutions to your doorstep.',
+		'Interior surfaces, considered — flooring, walls, ceilings, light and soft layers, sourced and crafted by hand in India.',
 	established: 2022,
 	address: {
 		line1: '820/28, Jyoti Park, Gali No. 13',
 		line2: 'Sector 7 Extension, Gurugram',
 		state: 'Haryana',
 		pincode: '122006',
-		full: '820/28, Jyoti Park, Gali No. 13, Sector 7 Extension, Gurugram, Haryana – 122006'
+		full: 'The Interior Aura, Sector 7 Extension, Gurugram, Haryana 122006, India'
 	},
 	gst: '06CENPG0052F2ZV',
 	serviceAreas: ['Gurgaon', 'Faridabad', 'Manesar', 'Sohna', 'Delhi NCR'],
-	phone: '+91-XXXXXXXXXX',
-	email: 'info@theinterioraura.com',
-	hours: 'Mon – Sat: 10:00 AM – 7:00 PM',
-	highlights: [
-		'Premium Quality Materials',
-		'Doorstep Service with Physical Sampling',
-		'Competitive Wholesale Pricing',
-		'Expert Installation Services',
-		'Wide Range of Designs & Patterns',
-		'Serving Delhi NCR Since 2022'
-	]
+	contactPerson: 'Saksham Goel',
+	phone: '+91 80477 92861',
+	phoneHref: 'tel:+918047792861',
+	email: 'hello@theinterioraura.com',
+	hours: 'Mon – Sat: 10:00 AM – 7:00 PM'
 };
 
 export interface Product {
@@ -38,291 +32,281 @@ export interface Product {
 	unit: string;
 }
 
-export interface ProductCategory {
+export interface Collection {
 	slug: string;
 	title: string;
-	subtitle: string;
+	shortTitle: string;
+	layerNo: string;
+	plate: string;
+	term: string;
 	description: string;
-	icon: string;
+	kinds: string;
+	scene: 'scene-warm' | 'scene-clay' | 'scene-green' | 'scene-stone' | 'scene-soft';
+	darkPlate: boolean;
 	products: Product[];
-	features: string[];
 }
 
-export const productCategories: ProductCategory[] = [
+export const collections: Collection[] = [
 	{
-		slug: 'vinyl-flooring',
-		title: 'Vinyl & SPC Flooring',
-		subtitle: '100% Waterproof Flooring Solutions',
+		slug: 'flooring',
+		title: 'Flooring',
+		shortTitle: 'Flooring',
+		layerNo: 'Layer i',
+		plate: 'Pl. 02 — Flooring',
+		term: '— underfoot',
 		description:
-			'Our SPC (Stone Plastic Composite) and PVC Vinyl Flooring is 100% waterproof with easy click-lock installation. Available in wood, stone, and tile patterns, it offers a premium look at nominal charges — perfect for homes, offices, and commercial spaces.',
-		icon: '🏠',
+			'The plane you live on, and the one a room is judged by first. Warm, quiet, and built to last a generation.',
+		kinds:
+			'Engineered & laminate wood · SPC stone-composite · luxury vinyl tile & plank · waterproof matte finishes',
+		scene: 'scene-warm',
+		darkPlate: true,
 		products: [
 			{
-				name: 'SPC Wooden Flooring',
+				name: 'Laminate wood',
 				description:
-					'100% waterproof SPC flooring with click-lock system. Warm feel in winters, easy installation. Available in 4mm-8mm thickness.',
-				image: '/images/spc-wooden.jpg',
-				price: 'Starting ₹90',
-				unit: 'per sq ft'
-			},
-			{
-				name: 'PVC Vinyl Flooring',
-				description:
-					'Durable PVC vinyl in plank and roll formats with realistic wood and stone textures. Ideal for high-traffic areas.',
-				image: '/images/pvc-vinyl.jpg',
-				price: 'Starting ₹35',
-				unit: 'per sq ft'
-			},
-			{
-				name: 'PVC Flooring Planks',
-				description:
-					'Easy-to-install PVC planks with self-adhesive or click-lock options. Perfect for quick renovations.',
-				image: '/images/pvc-planks.jpg',
-				price: 'Starting ₹45',
-				unit: 'per sq ft'
-			},
-			{
-				name: 'Luxury Vinyl Tiles',
-				description:
-					'Premium luxury vinyl tiles that mimic natural stone and ceramic at a fraction of the cost.',
-				image: '/images/lvt.jpg',
-				price: 'Starting ₹65',
-				unit: 'per sq ft'
-			}
-		],
-		features: [
-			'100% Waterproof',
-			'Easy Click-Lock Installation',
-			'Scratch & Stain Resistant',
-			'Low Maintenance',
-			'Available in 4mm to 8mm',
-			'Wood, Stone & Tile Patterns'
-		]
-	},
-	{
-		slug: 'wooden-flooring',
-		title: 'Wooden Flooring',
-		subtitle: 'Premium Laminate & Engineered Wood',
-		description:
-			'We deal in high ranges of wooden flooring starting from 8mm to 12mm, in different patterns such as straight planks, herringbones, and chevron with high density and quality. It gives a premium and luxury look at very nominal charges.',
-		icon: '🪵',
-		products: [
-			{
-				name: 'Laminated Wooden Flooring',
-				description:
-					'High-density laminate flooring in 8mm to 12mm thickness. Available in oak, walnut, maple, and teak finishes.',
+					'High-density laminate in 8–12 mm — oak, walnut, maple and teak, in straight plank.',
 				image: '/images/laminate.jpg',
-				price: 'Starting ₹75',
-				unit: 'per sq ft'
+				price: 'from ₹75',
+				unit: 'sq ft'
 			},
 			{
-				name: 'Herringbone Pattern Flooring',
-				description: 'Classic herringbone pattern that adds elegance and character to any room.',
+				name: 'Herringbone & chevron',
+				description: 'Patterned wood flooring, cut and laid for rooms that deserve ceremony.',
 				image: '/images/herringbone.jpg',
-				price: 'Starting ₹120',
-				unit: 'per sq ft'
+				price: 'from ₹120',
+				unit: 'sq ft'
 			},
 			{
-				name: 'Chevron Pattern Flooring',
-				description: 'Sophisticated chevron pattern flooring for a modern, high-end look.',
-				image: '/images/chevron.jpg',
-				price: 'Starting ₹120',
-				unit: 'per sq ft'
-			},
-			{
-				name: 'Wooden Deck Flooring',
+				name: 'SPC stone-composite',
 				description:
-					'Weather-resistant deck flooring for balconies, terraces, and outdoor spaces.',
+					'Fully waterproof stone-polymer planks with a click-lock fit. Warm underfoot, calm to live with.',
+				image: '/images/spc-wooden.jpg',
+				price: 'from ₹90',
+				unit: 'sq ft'
+			},
+			{
+				name: 'Luxury vinyl tile & plank',
+				description:
+					'Quiet, resilient vinyl in wood and stone readings — for hardworking rooms.',
+				image: '/images/lvt.jpg',
+				price: 'from ₹35',
+				unit: 'sq ft'
+			},
+			{
+				name: 'Deck flooring',
+				description: 'Weathered-in wood decking for balconies, terraces and open air.',
 				image: '/images/deck.jpg',
-				price: 'Starting ₹180',
-				unit: 'per sq ft'
+				price: 'from ₹180',
+				unit: 'sq ft'
 			}
-		],
-		features: [
-			'8mm to 12mm Thickness',
-			'High Density & Durability',
-			'Planks, Herringbone & Chevron',
-			'Premium Oak, Walnut & Teak Finishes',
-			'AC3 to AC5 Wear Rating',
-			'Professional Installation Available'
 		]
 	},
 	{
-		slug: 'wall-decor',
-		title: 'Wall Panels & Wallpaper',
-		subtitle: 'Complete Wall Transformation Solutions',
+		slug: 'walls',
+		title: 'Walls',
+		shortTitle: 'Walls & wallpaper',
+		layerNo: 'Layer ii',
+		plate: 'Pl. 03 — Walls',
+		term: '— the vertical plane',
 		description:
-			'Transform your walls with our premium range of PVC and WPC wall panels, plus wallpapers in multiple qualities and designs at reasonable prices — brand, non-brand, and fully customised options in PVC, vinyl backing, and HD.',
-		icon: '🎨',
+			'Where a room finds its character. From the barely-there to the unmistakably ornate, made to your wall and your mood.',
+		kinds:
+			'Designer & imported wallpaper · PVC & WPC panelling · charcoal & louvered panels · custom and royal patterns',
+		scene: 'scene-clay',
+		darkPlate: false,
 		products: [
 			{
-				name: 'PVC & WPC Wall Panels',
+				name: 'Designer wallpaper',
 				description:
-					'Lightweight, waterproof panels in wood-grain, fluted, and 3D designs. Ideal for feature walls, bathrooms, and kitchens.',
-				image: '/images/pvc-panels.jpg',
-				price: 'Starting ₹60',
-				unit: 'per sq ft'
-			},
-			{
-				name: 'PVC Designer Wallpaper',
-				description:
-					'Premium PVC wallpapers in floral, geometric, and abstract patterns. Washable and long-lasting.',
+					'Brand and imported papers — floral, geometric, jewel-toned. Washable, long-lived.',
 				image: '/images/pvc-wallpaper.jpg',
-				price: 'Starting ₹1,500',
-				unit: 'per roll'
+				price: 'from ₹1,500',
+				unit: 'roll'
 			},
 			{
-				name: 'HD & Vinyl Wallpaper',
-				description:
-					'High-definition printed and heavy-duty vinyl-backed wallpapers, ideal for homes and commercial spaces alike.',
-				image: '/images/hd-wallpaper.jpg',
-				price: 'Starting ₹2,200',
-				unit: 'per roll'
-			},
-			{
-				name: 'Customized Wallpaper',
-				description:
-					'Get wallpapers printed with your own designs, photos, or branding. Perfect for offices and feature walls.',
+				name: 'Custom-printed wallpaper',
+				description: 'Your artwork, photograph or pattern, printed to the exact wall.',
 				image: '/images/custom-wallpaper.jpg',
-				price: 'Starting ₹80',
-				unit: 'per sq ft'
+				price: 'from ₹80',
+				unit: 'sq ft'
+			},
+			{
+				name: 'PVC & WPC panelling',
+				description:
+					'Fluted, louvered and wood-grain panels — moisture-proof and made to meet cleanly.',
+				image: '/images/pvc-panels.jpg',
+				price: 'from ₹60',
+				unit: 'sq ft'
+			},
+			{
+				name: 'HD & vinyl-backed paper',
+				description: 'Heavy-duty papers for commercial walls and high-touch rooms.',
+				image: '/images/hd-wallpaper.jpg',
+				price: 'from ₹2,200',
+				unit: 'roll'
 			}
-		],
-		features: [
-			'Water & Moisture Resistant Panels',
-			'Brand & Non-Brand Wallpapers',
-			'Custom Design Printing',
-			'Washable & Stain Resistant',
-			'Termite & Insect Proof Panels',
-			'Professional Installation'
+		]
+	},
+	{
+		slug: 'ceilings',
+		title: 'Ceilings',
+		shortTitle: 'Ceilings',
+		layerNo: 'Layer iii',
+		plate: 'Pl. 04 — Ceilings',
+		term: '— the fifth wall',
+		description:
+			'The surface most rooms forget. Dressed well, it is the difference between a space and a setting.',
+		kinds: 'PVC & WPC ceiling panels · decorative false ceilings · grid systems · feature ceiling work',
+		scene: 'scene-green',
+		darkPlate: true,
+		products: [
+			{
+				name: 'PVC ceiling panels',
+				description: 'Clean-lined, moisture-proof panels for kitchens, baths and verandas.',
+				image: '/images/pvc-ceiling.jpg',
+				price: 'from ₹65',
+				unit: 'sq ft'
+			},
+			{
+				name: 'WPC ceiling panels',
+				description: 'Warm wood-composite ceilings with the depth of timber.',
+				image: '/images/wpc-ceiling.jpg',
+				price: 'from ₹150',
+				unit: 'sq ft'
+			},
+			{
+				name: 'Decorative false ceilings',
+				description: 'Coves, trays and shadow lines — the quiet architecture overhead.',
+				image: '/images/false-ceiling.jpg',
+				price: 'from ₹85',
+				unit: 'sq ft'
+			},
+			{
+				name: 'Grid systems',
+				description: 'Practical grid and tile ceilings for offices and commercial rooms.',
+				image: '/images/ceiling-grid.jpg',
+				price: 'from ₹55',
+				unit: 'sq ft'
+			}
+		]
+	},
+	{
+		slug: 'light-glass',
+		title: 'Light & Glass',
+		shortTitle: 'Light & glass',
+		layerNo: 'Layer iv',
+		plate: 'Pl. 05 — Light & Glass',
+		term: '— light, filtered',
+		description:
+			'How a room breathes. We shape the daylight — softening, screening, framing it — so the surfaces beneath are seen at their best.',
+		kinds:
+			'Roller, zebra, venetian & wooden blinds · sun-control, frosted & decorative glass film · window films',
+		scene: 'scene-stone',
+		darkPlate: false,
+		products: [
+			{
+				name: 'Roller blinds',
+				description: 'Blackout, sunscreen and translucent fabrics, cut to the window.',
+				image: '/images/roller-blinds.jpg',
+				price: 'from ₹90',
+				unit: 'sq ft'
+			},
+			{
+				name: 'Zebra & dual blinds',
+				description: 'Alternating sheer and opaque bands — light you can tune by hand.',
+				image: '/images/zebra-blinds.jpg',
+				price: 'from ₹140',
+				unit: 'sq ft'
+			},
+			{
+				name: 'Venetian & wooden blinds',
+				description: 'Aluminium and timber slats for precise, warm light control.',
+				image: '/images/venetian-blinds.jpg',
+				price: 'from ₹150',
+				unit: 'sq ft'
+			},
+			{
+				name: 'Sun-control & frosted film',
+				description: 'Garware sun films, frosted and decorative glass films, fitted in place.',
+				image: '/images/glass-film.jpg',
+				price: 'from ₹45',
+				unit: 'sq ft'
+			}
 		]
 	},
 	{
 		slug: 'carpets',
-		title: 'Carpets & Mats',
-		subtitle: 'Designer Carpets, Tiles & Rolls',
+		title: 'Carpets & Textiles',
+		shortTitle: 'Carpets',
+		layerNo: 'Layer v',
+		plate: 'Pl. 06 — Carpets & Textiles',
+		term: '— the soft layer',
 		description:
-			'We offer different types of carpet tiles and rolls for commercial and residential usage at reasonable prices. Our range includes nylon, polypropylene, and printed floor carpets — with both material and installation provided.',
-		icon: '🧶',
+			'The final layer, and the one you feel. Warmth, hush and texture that turn a finished room into a lived-in one.',
+		kinds:
+			'Designer & printed carpets · modular carpet tiles · wall-to-wall · hand-loom floor pieces',
+		scene: 'scene-soft',
+		darkPlate: true,
 		products: [
 			{
-				name: 'Nylon Floor Carpet',
-				description:
-					'Matte-finish nylon carpet for homes and offices — our most popular everyday option.',
+				name: 'Nylon carpet, matte',
+				description: 'The house staple — soft, even, everyday. Material and fitting included.',
 				image: '/images/carpet-mats.jpg',
 				price: '₹40',
-				unit: 'per sq ft'
+				unit: 'sq ft'
 			},
 			{
-				name: 'Polypropylene Floor Carpet',
-				description:
-					'Stain-resistant polypropylene carpets ideal for high-traffic commercial spaces.',
-				image: '/images/polypropylene.jpg',
-				price: 'Starting ₹45',
-				unit: 'per sq ft'
-			},
-			{
-				name: 'Designer Printed Carpet',
-				description:
-					'Beautiful printed carpets with floral, geometric, and contemporary patterns.',
+				name: 'Designer printed carpet',
+				description: 'Floral, geometric and contemporary patterns, printed deep.',
 				image: '/images/printed-carpet.jpg',
-				price: 'Starting ₹55',
-				unit: 'per sq ft'
+				price: 'from ₹55',
+				unit: 'sq ft'
 			},
 			{
-				name: 'Carpet Tiles',
-				description:
-					'Modular carpet tiles for offices and commercial spaces. Easy to install and replace individual tiles.',
+				name: 'Carpet tiles',
+				description: 'Modular tiles for offices — replace one, not the room.',
 				image: '/images/carpet-tiles.jpg',
-				price: 'Starting ₹55',
-				unit: 'per sq ft'
+				price: 'from ₹55',
+				unit: 'sq ft'
+			},
+			{
+				name: 'Wall-to-wall & polypropylene',
+				description: 'Full-room rolls in hardwearing fibres for busy floors.',
+				image: '/images/polypropylene.jpg',
+				price: 'from ₹45',
+				unit: 'sq ft'
 			}
-		],
-		features: [
-			'Tiles & Roll Options',
-			'Commercial & Residential Use',
-			'Stain Resistant Materials',
-			'Wide Pattern Selection',
-			'Material + Installation',
-			'Reasonable Pricing'
-		]
-	},
-	{
-		slug: 'blinds',
-		title: 'Window Blinds',
-		subtitle: 'Roller, Vertical, Venetian & Zebra Blinds',
-		description:
-			'We deal in every type of window blinds — roller blinds, vertical blinds, roman blinds, wooden blinds, venetian blinds, and zebra blinds — with custom sizing for a perfect fit in any window.',
-		icon: '🪟',
-		products: [
-			{
-				name: 'Window Roller Blinds',
-				description:
-					'Classic roller blinds in blackout, sunscreen, and translucent fabrics. Custom sizes available.',
-				image: '/images/roller-blinds.jpg',
-				price: 'Starting ₹90',
-				unit: 'per sq ft'
-			},
-			{
-				name: 'Vertical Blinds',
-				description:
-					'Vertical blinds perfect for large windows and sliding doors. Available in fabric and PVC.',
-				image: '/images/vertical-blinds.jpg',
-				price: 'Starting ₹85',
-				unit: 'per sq ft'
-			},
-			{
-				name: 'Venetian & Wooden Blinds',
-				description:
-					'Aluminium and wooden venetian blinds for precise light control and privacy.',
-				image: '/images/venetian-blinds.jpg',
-				price: 'Starting ₹150',
-				unit: 'per sq ft'
-			},
-			{
-				name: 'Zebra / Dual Blinds',
-				description:
-					'Modern zebra blinds with alternating sheer and opaque stripes for stylish light control.',
-				image: '/images/zebra-blinds.jpg',
-				price: 'Starting ₹140',
-				unit: 'per sq ft'
-			}
-		],
-		features: [
-			'Custom Sizing Available',
-			'Blackout & Sunscreen Options',
-			'Roller, Roman, Wooden & Zebra',
-			'Motorized Options Available',
-			'UV Protection',
-			'Easy Maintenance'
 		]
 	}
 ];
 
-export const installationServices = [
+export const services = [
 	{
-		name: 'Flooring Installation',
-		description: 'Professional installation of vinyl, laminate, wooden, and SPC flooring.'
-	},
-	{
-		name: 'Wallpaper Installation',
-		description: 'Expert wallpaper contractors for residential and commercial spaces.'
-	},
-	{
-		name: 'Glass Film Installation',
+		name: 'Doorstep sampling',
 		description:
-			'Frosted, decorative, and sun control glass film installation for offices and homes.'
+			'We bring physical samples to your home or office, so you judge the material in the room it will live in.'
 	},
 	{
-		name: 'Vinyl Printing & Stickers',
-		description: 'Custom vinyl printing and sticker application for branding and decoration.'
+		name: 'Measurement & estimate',
+		description: 'Precise measurement and an honest, all-inclusive estimate before any work begins.'
 	},
 	{
-		name: 'Blind Installation',
-		description: 'Professional measurement and installation of all types of window blinds.'
+		name: 'Fitting & installation',
+		description:
+			'Flooring, wallpaper, panelling, ceilings, blinds and films — laid and finished by our own hands.'
 	},
 	{
-		name: 'Wall Panel Installation',
-		description: 'Expert fitting of PVC and WPC wall panels for walls and ceilings.'
+		name: 'Custom & bespoke work',
+		description:
+			'Printed wallpaper from your artwork, feature ceilings, heritage panelling — made to the room.'
+	},
+	{
+		name: 'Trade & projects',
+		description:
+			'Supply and fit-out for builders, designers and commercial projects across Delhi NCR.'
+	},
+	{
+		name: 'Aftercare',
+		description: 'Guidance on living with each surface, and repair or refit when you need us again.'
 	}
 ];

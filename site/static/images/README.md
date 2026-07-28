@@ -1,25 +1,25 @@
 # Product Images
 
-Drop product photos into this folder. Each card on the site references a specific
-filename and will automatically display the photo once it exists here (until then,
-a styled placeholder is shown).
+Drop product photos into this folder. Each piece on a collection page references a
+specific filename and shows the photo once it exists here (until then, a toned
+"plate" placeholder in the collection's palette is shown).
 
 Expected filenames (from `src/lib/data/company.ts`):
 
-## Vinyl & SPC Flooring
-- `spc-wooden.jpg`, `pvc-vinyl.jpg`, `pvc-planks.jpg`, `lvt.jpg`
+## Flooring
+- `laminate.jpg`, `herringbone.jpg`, `spc-wooden.jpg`, `lvt.jpg`, `deck.jpg`
 
-## Wooden Flooring
-- `laminate.jpg`, `herringbone.jpg`, `chevron.jpg`, `deck.jpg`
+## Walls
+- `pvc-wallpaper.jpg`, `custom-wallpaper.jpg`, `pvc-panels.jpg`, `hd-wallpaper.jpg`
 
-## Wall Panels & Wallpaper
-- `pvc-panels.jpg`, `pvc-wallpaper.jpg`, `hd-wallpaper.jpg`, `custom-wallpaper.jpg`
+## Ceilings
+- `pvc-ceiling.jpg`, `wpc-ceiling.jpg`, `false-ceiling.jpg`, `ceiling-grid.jpg`
 
-## Carpets & Mats
-- `carpet-mats.jpg`, `polypropylene.jpg`, `printed-carpet.jpg`, `carpet-tiles.jpg`
+## Light & Glass
+- `roller-blinds.jpg`, `zebra-blinds.jpg`, `venetian-blinds.jpg`, `glass-film.jpg`
 
-## Window Blinds
-- `roller-blinds.jpg`, `vertical-blinds.jpg`, `venetian-blinds.jpg`, `zebra-blinds.jpg`
+## Carpets & Textiles
+- `carpet-mats.jpg`, `printed-carpet.jpg`, `carpet-tiles.jpg`, `polypropylene.jpg`
 
-Tip: keep images roughly 4:3 aspect ratio (e.g. 800×600) for the cleanest look —
-cards crop with `object-cover` so exact dimensions are flexible.
+Tip: keep images roughly 4:3 (e.g. 1200×900). Warm, low-key photography suits the
+design — the plates crop with `object-cover`, so exact dimensions are flexible.

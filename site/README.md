@@ -1,43 +1,48 @@
 # The Interior Aura — Website
 
-A SvelteKit + Tailwind CSS website for The Interior Aura, a flooring and interiors
-business in Gurugram, Haryana (inspired by the concept of theinterioraura.com,
-with a curated product catalog rather than a 1:1 copy).
+"Surfaces, considered." A SvelteKit + Tailwind site for The Interior Aura, an
+interior-surfaces atelier in Gurugram, India — dark editorial design (ink,
+limewash and bronze; Fraunces + Hanken Grotesk), structured around five surface
+collections: Flooring, Walls, Ceilings, Light & Glass, Carpets & Textiles.
 
-## Tech Stack
+## Tech stack
 
-- **SvelteKit 2** (Svelte 5 runes) with `@sveltejs/adapter-static` — fully prerendered static site
-- **Tailwind CSS 4** via the `@tailwindcss/vite` plugin
-- **Fonts**: Playfair Display (headings) + Inter (body), loaded from Google Fonts
+- **SvelteKit 2** (Svelte 5 runes) with `@sveltejs/adapter-static` — fully prerendered
+- **Tailwind CSS 4** via `@tailwindcss/vite`, plus a hand-written design system in `src/app.css`
+- **EN/DE language toggle** — lightweight store-based i18n (`src/lib/i18n.ts`); English
+  lives in the markup, German overrides in the dictionary, untranslated keys fall back
+- **Fonts**: Fraunces (serif) + Hanken Grotesk (sans) from Google Fonts
 
 ## Commands
 
 ```bash
 npm install      # install dependencies
-npm run dev      # start dev server
-npm run build    # build static site into build/
-npm run preview  # preview the production build
-npm run check    # svelte-check type checking
+npm run dev      # dev server
+npm run build    # static build into build/
+npm run preview  # preview production build
+npm run check    # svelte-check
 ```
 
 ## Structure
 
-- `src/lib/data/company.ts` — **single source of truth** for all content: company
-  info, product categories, products, prices, and installation services. Edit
-  prices and copy here; every page renders from this file.
-- `src/lib/components/` — Header, Footer, PageHero, ProductCard
-- `src/routes/` — pages: home, `/products`, `/products/[slug]` (one per category),
-  `/services`, `/about`, `/contact`
-- `static/images/` — product photos (see the README there for expected filenames;
-  cards show styled placeholders until photos are added)
+- `src/lib/data/company.ts` — single source of truth: company facts, the five
+  collections, every product with its indicative price. Edit copy and prices here.
+- `src/lib/i18n.ts` — language store + DE dictionary
+- `src/lib/actions/reveal.ts` — scroll-reveal action
+- `src/app.css` — the design system (tokens, plates, sections, forms, footer)
+- `src/routes/` — `/` (the one-page story), `/collections`, `/collections/[slug]`,
+  `/atelier`, `/enquire`
+- `static/images/` — product photos (see its README for expected filenames)
 
 ## Pricing
 
-The ₹40/sq ft nylon carpet rate is confirmed from the company's public listing.
-All other prices are indicative "Starting ₹X" Gurgaon-market rates — adjust them
-in `src/lib/data/company.ts` once the actual price list is confirmed.
+The ₹40/sq ft nylon carpet rate is confirmed from the company's public listing;
+all other prices are indicative "from ₹X" Gurgaon-market rates — adjust in
+`src/lib/data/company.ts`.
 
 ## Deployment
 
-The build output in `build/` is plain static files — deploy to Vercel, Netlify,
-GitHub Pages, or any static host.
+`.github/workflows/deploy.yml` builds and deploys to GitHub Pages on every push
+to `main` (Pages source must be set to "GitHub Actions"). The build honors
+`BASE_PATH` for project-site subpaths; local dev and root-domain hosts run with
+an empty base.
