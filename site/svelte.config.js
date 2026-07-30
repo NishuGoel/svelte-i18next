@@ -15,9 +15,10 @@ const config = {
 		},
 		prerender: {
 			handleHttpError: ({ path, message }) => {
-				// Product photos are added to static/images/ separately; cards show a
-				// styled placeholder until then, so a missing image must not fail the build.
-				if (path.startsWith('/images/')) {
+				// Product photos are added to static/images/ separately; plates show a
+				// toned placeholder until then, so a missing image must not fail the
+				// build. Match with the base path included (e.g. /the-interior-aura/images/).
+				if (path.startsWith(`${process.env.BASE_PATH || ''}/images/`)) {
 					console.warn(`(ignored during prerender) ${message}`);
 					return;
 				}
