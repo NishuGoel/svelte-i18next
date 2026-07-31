@@ -2,6 +2,7 @@
 	import '../app.css';
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+	import QuickBar from '$lib/components/QuickBar.svelte';
 	import { lang } from '$lib/i18n';
 
 	let { children } = $props();
@@ -20,3 +21,4 @@
 	{@render children()}
 </main>
 <Footer />
+<QuickBar />

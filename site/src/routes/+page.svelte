@@ -59,6 +59,21 @@
 	</div>
 </div>
 
+<!-- Collections directory — everything the house makes, one glance -->
+<nav class="directory" aria-label={$t('dir.eyebrow', 'Go straight to')}>
+	<div class="wrap" style="padding:0;">
+		<div class="cells">
+			{#each collections as c}
+				<a href="{base}/collections/{c.slug}">
+					<div class="no">{c.layerNo}</div>
+					<div class="nm">{$t(`col.${c.slug}.title`, c.title)}</div>
+					<div class="tm">{$t(`col.${c.slug}.term`, c.term).replace('— ', '')}</div>
+				</a>
+			{/each}
+		</div>
+	</div>
+</nav>
+
 <!-- Collections / the layers -->
 <section class="section plaster" id="collections">
 	<div class="wrap">
@@ -98,6 +113,75 @@
 				</div>
 			</article>
 		{/each}
+	</div>
+</section>
+
+<!-- Choosing, made simple -->
+<section class="section plaster tight" id="compare" style="border-top:1px solid var(--line-dark);">
+	<div class="wrap">
+		<div class="layers-head" style="margin-bottom:0;" use:reveal>
+			<div class="statement">
+				<span class="eyebrow dim" style="display:block;margin-bottom:18px;"
+					>{$t('cmp.eyebrow', 'Choosing, made simple')}</span
+				>
+				<h2 style="font-size:clamp(32px,4.2vw,58px);">{$t('cmp.h2', 'Which floor suits your room?')}</h2>
+			</div>
+			<p class="intro-p">
+				{$t(
+					'cmp.intro',
+					'Four ways to a beautiful floor — set side by side, so you know what to ask for within a minute. The rest we settle with samples, in your home.'
+				)}
+			</p>
+		</div>
+		<div class="compare-wrap" use:reveal>
+			<table class="compare">
+				<thead>
+					<tr>
+						<th></th>
+						<th>{$t('cmp.lam', 'Laminate wood')}</th>
+						<th>{$t('cmp.spc', 'SPC stone-composite')}</th>
+						<th>{$t('cmp.lvt', 'Luxury vinyl')}</th>
+						<th>{$t('cmp.pat', 'Herringbone & chevron')}</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>{$t('cmp.r1', 'Waterproof')}</th>
+						<td>{$t('cmp.lam.1', 'Splash-resistant')}</td>
+						<td><b>{$t('cmp.spc.1', 'Fully waterproof')}</b></td>
+						<td><b>{$t('cmp.lvt.1', 'Fully waterproof')}</b></td>
+						<td>{$t('cmp.pat.1', 'Splash-resistant')}</td>
+					</tr>
+					<tr>
+						<th>{$t('cmp.r2', 'Feel underfoot')}</th>
+						<td>{$t('cmp.lam.2', 'Warm, like wood')}</td>
+						<td>{$t('cmp.spc.2', 'Firm and quiet')}</td>
+						<td>{$t('cmp.lvt.2', 'Soft and silent')}</td>
+						<td>{$t('cmp.pat.2', 'Warm, like wood')}</td>
+					</tr>
+					<tr>
+						<th>{$t('cmp.r3', 'Best for')}</th>
+						<td>{$t('cmp.lam.3', 'Bedrooms, living rooms')}</td>
+						<td>{$t('cmp.spc.3', 'Kitchens, baths, rentals')}</td>
+						<td>{$t('cmp.lvt.3', "Children's rooms, offices")}</td>
+						<td>{$t('cmp.pat.3', 'Formal, considered rooms')}</td>
+					</tr>
+					<tr>
+						<th>{$t('cmp.r4', 'From')}</th>
+						<td class="from">₹75 / sq ft</td>
+						<td class="from">₹90 / sq ft</td>
+						<td class="from">₹35 / sq ft</td>
+						<td class="from">₹120 / sq ft</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div style="margin-top:50px;" use:reveal>
+			<a href="{base}/collections/flooring" class="link-more">
+				<span>{$t('col.flooring.more', 'Discover flooring')}</span>
+				<span class="ln"></span>
+			</a>
+		</div>
 	</div>
 </section>
 
@@ -156,6 +240,79 @@
 				)}
 			</p>
 			<a href="{base}/enquire" class="btn btn-solid">{$t('ft.cta', 'Request the lookbook')}</a>
+		</div>
+	</div>
+</section>
+
+<!-- Questions, answered -->
+<section class="section plaster tight" id="faq">
+	<div class="wrap">
+		<div use:reveal>
+			<span class="eyebrow dim" style="display:block;margin-bottom:18px;"
+				>{$t('faq.eyebrow', 'Good to know')}</span
+			>
+			<h2 style="font-size:clamp(32px,4.2vw,58px); max-width:16ch;">
+				{$t('faq.h2', 'Questions, answered honestly.')}
+			</h2>
+		</div>
+		<div class="faq" style="margin-top:60px;" use:reveal>
+			<details>
+				<summary>{$t('faq.q1', 'Where do you deliver and install?')}<span class="ind">+</span></summary>
+				<p class="ans">
+					{$t(
+						'faq.a1',
+						'Across Gurgaon, Faridabad, Manesar, Sohna and the wider Delhi NCR — material and installation from one hand. For projects beyond India, write to hello@theinterioraura.com.'
+					)}
+				</p>
+			</details>
+			<details>
+				<summary>{$t('faq.q2', 'Is doorstep sampling really free?')}<span class="ind">+</span></summary>
+				<p class="ans">
+					{$t(
+						'faq.a2',
+						'Yes. We bring physical samples to your home or office, so you judge the material in the room it will live in. No charge, no obligation.'
+					)}
+				</p>
+			</details>
+			<details>
+				<summary>{$t('faq.q3', 'Do prices include installation?')}<span class="ind">+</span></summary>
+				<p class="ans">
+					{$t(
+						'faq.a3',
+						'Our quotes are all-inclusive for the room — material, fitting and finishing. The "from" rates you see are starting material rates; we will always quote the room, not the brochure.'
+					)}
+				</p>
+			</details>
+			<details>
+				<summary>{$t('faq.q4', 'How long does fitting take?')}<span class="ind">+</span></summary>
+				<p class="ans">
+					{$t(
+						'faq.a4',
+						'Most single rooms are finished in a day; whole homes take two to five days depending on the layers involved. We confirm the schedule with your estimate.'
+					)}
+				</p>
+			</details>
+			<details>
+				<summary>{$t('faq.q5', 'Can you make something bespoke?')}<span class="ind">+</span></summary>
+				<p class="ans">
+					{$t(
+						'faq.a5',
+						'Yes — wallpaper printed from your artwork, feature ceilings, heritage panelling. A photograph or a sketch is enough to begin.'
+					)}
+				</p>
+			</details>
+			<details>
+				<summary>{$t('faq.q6', 'Do you work with trade and projects?')}<span class="ind">+</span></summary>
+				<p class="ans">
+					{$t(
+						'faq.a6',
+						'Yes — we supply and fit for builders, designers and commercial projects. Write to hello@theinterioraura.com; we reply within two working days.'
+					)}
+				</p>
+			</details>
+		</div>
+		<div style="margin-top:56px;" use:reveal>
+			<a href="{base}/enquire" class="btn btn-ink">{$t('nav.enquire', 'Enquire')}</a>
 		</div>
 	</div>
 </section>

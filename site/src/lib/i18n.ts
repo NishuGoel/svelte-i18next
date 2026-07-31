@@ -118,7 +118,54 @@ const dict: Record<Lang, Record<string, string>> = {
 		'foot.city': 'Gurugram, Indien',
 		'foot.rights': 'Alle Rechte vorbehalten.',
 		'msg.thanks': 'Vielen Dank, {name}. Wir melden uns innerhalb von zwei Werktagen.',
-		'msg.validate': 'Bitte geben Sie Namen und E-Mail an, damit wir antworten können.'
+		'msg.validate': 'Bitte geben Sie Namen und E-Mail an, damit wir antworten können.',
+		'quick.wa': 'Per WhatsApp schreiben',
+		'quick.call': 'Anrufen',
+		'dir.eyebrow': 'Direkt zum Ziel',
+		'cmp.eyebrow': 'Die Wahl, leicht gemacht',
+		'cmp.h2': 'Welcher Boden passt zu Ihrem Raum?',
+		'cmp.intro':
+			'Vier Wege zu einem schönen Boden — nebeneinander gestellt, damit Sie in einer Minute wissen, wonach Sie fragen möchten. Den Rest klären wir mit Mustern bei Ihnen zu Hause.',
+		'cmp.r1': 'Wasserfest',
+		'cmp.r2': 'Gefühl unter den Füßen',
+		'cmp.r3': 'Ideal für',
+		'cmp.r4': 'Ab',
+		'cmp.lam': 'Laminatparkett',
+		'cmp.spc': 'SPC-Steinverbund',
+		'cmp.lvt': 'Luxus-Vinyl',
+		'cmp.pat': 'Fischgrät & Chevron',
+		'cmp.lam.1': 'Spritzwassergeschützt',
+		'cmp.lam.2': 'Warm, wie Holz',
+		'cmp.lam.3': 'Schlaf- und Wohnräume',
+		'cmp.spc.1': 'Vollständig wasserfest',
+		'cmp.spc.2': 'Fest und ruhig',
+		'cmp.spc.3': 'Küchen, Bäder, Vermietung',
+		'cmp.lvt.1': 'Vollständig wasserfest',
+		'cmp.lvt.2': 'Weich und leise',
+		'cmp.lvt.3': 'Kinderzimmer, Büros',
+		'cmp.pat.1': 'Spritzwassergeschützt',
+		'cmp.pat.2': 'Warm, wie Holz',
+		'cmp.pat.3': 'Repräsentative Räume',
+		'faq.eyebrow': 'Gut zu wissen',
+		'faq.h2': 'Fragen, ehrlich beantwortet.',
+		'faq.q1': 'Wo liefern und verlegen Sie?',
+		'faq.a1':
+			'In Gurgaon, Faridabad, Manesar, Sohna und im gesamten Raum Delhi NCR — Material und Verlegung aus einer Hand. Für Projekte außerhalb Indiens schreiben Sie an hello@theinterioraura.com.',
+		'faq.q2': 'Ist die Musterberatung wirklich kostenlos?',
+		'faq.a2':
+			'Ja. Wir kommen mit physischen Mustern zu Ihnen nach Hause oder ins Büro — Sie beurteilen das Material im Raum, in dem es leben wird. Ohne Kosten, ohne Verpflichtung.',
+		'faq.q3': 'Enthalten die Preise die Verlegung?',
+		'faq.a3':
+			'Unsere Angebote sind Komplettpreise für den Raum — Material, Verlegung und Abschlussarbeiten. Die genannten „ab“-Preise sind Startpreise für das Material; das Angebot gilt dem Raum, nicht der Broschüre.',
+		'faq.q4': 'Wie lange dauert die Verlegung?',
+		'faq.a4':
+			'Ein einzelner Raum ist meist an einem Tag fertig; ganze Wohnungen brauchen je nach Schichten zwei bis fünf Tage. Den genauen Zeitplan nennen wir mit dem Angebot.',
+		'faq.q5': 'Fertigen Sie auch nach Maß?',
+		'faq.a5':
+			'Ja — bedruckte Tapeten nach Ihrem Motiv, gestaltete Decken, Heritage-Paneele. Ein Foto oder eine Skizze genügt als Anfang.',
+		'faq.q6': 'Arbeiten Sie mit Händlern und Projekten?',
+		'faq.a6':
+			'Ja, wir beliefern Bauträger, Innenarchitekten und Gewerbeprojekte. Schreiben Sie an hello@theinterioraura.com — wir antworten innerhalb von zwei Werktagen.'
 	}
 };
 
