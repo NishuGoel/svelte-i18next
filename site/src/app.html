@@ -3,6 +3,14 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script>
+			// Apply the visitor's stored theme before first paint (dark is the default).
+			try {
+				if (localStorage.getItem('theme') === 'light') {
+					document.documentElement.dataset.theme = 'light';
+				}
+			} catch (e) {}
+		</script>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link

@@ -121,6 +121,8 @@ const dict: Record<Lang, Record<string, string>> = {
 		'msg.validate': 'Bitte geben Sie Namen und E-Mail an, damit wir antworten können.',
 		'quick.wa': 'Per WhatsApp schreiben',
 		'quick.call': 'Anrufen',
+		'theme.light': 'Zum hellen Thema wechseln',
+		'theme.dark': 'Zum dunklen Thema wechseln',
 		'dir.eyebrow': 'Direkt zum Ziel',
 		'cmp.eyebrow': 'Die Wahl, leicht gemacht',
 		'cmp.h2': 'Welcher Boden passt zu Ihrem Raum?',

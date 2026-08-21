@@ -93,7 +93,7 @@
 	<div class="wrap">
 		<span class="eyebrow" style="display:block;margin-bottom:34px;">The house, on record</span>
 		<div style="max-width:720px;">
-			<div style="display:grid;grid-template-columns:200px 1fr;gap:14px 28px;font-size:14px;color:var(--ivory-dim);border-top:1px solid var(--line-soft);padding-top:24px;">
+			<div style="display:grid;grid-template-columns:200px 1fr;gap:14px 28px;font-size:14px;color:var(--fg-dim);border-top:1px solid var(--line-soft);padding-top:24px;">
 				<span style="letter-spacing:.18em;text-transform:uppercase;font-size:11px;color:var(--bronze);">Nature</span>
 				<span>Wholesale house &amp; retailer of interior surfaces</span>
 				<span style="letter-spacing:.18em;text-transform:uppercase;font-size:11px;color:var(--bronze);">Established</span>
